@@ -29,8 +29,10 @@ Portfolio + résumé attached / linked below. Happy to walk through any of the t
 Thanks for reading,
 Rob
 
-Rob Hadden, Jr.
+Robert Hadden Jr.
 Portfolio: https://respectfulnrespected59-source.github.io/fde-portfolio/
+Existing portfolio: https://respectfulnrespected59-source.github.io/quantus-portfolio/
 GitHub: https://github.com/respectfulnrespected59-source
+LinkedIn: https://linkedin.com/in/robert-hadden-jr-b2b987163
 Email: respectfulnrespected59@gmail.com
 Phone: (510) 730-6882

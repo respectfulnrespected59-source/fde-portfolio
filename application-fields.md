@@ -4,7 +4,7 @@ For copy-paste into Workday, Greenhouse, Lever, etc.
 
 | Field | Value |
 |---|---|
-| Legal name | Rob Hadden, Jr. |
+| Legal name | Robert Hadden Jr. |
 | Preferred name | Rob |
 | Email | respectfulnrespected59@gmail.com |
 | Phone | (510) 730-6882 |
@@ -14,8 +14,9 @@ For copy-paste into Workday, Greenhouse, Lever, etc.
 | ZIP | 94538 |
 | Country | United States |
 | GitHub | https://github.com/respectfulnrespected59-source |
-| Portfolio | https://respectfulnrespected59-source.github.io/fde-portfolio/ |
-| LinkedIn | *(not maintained — leave blank or note "N/A — see portfolio")* |
+| LinkedIn | https://linkedin.com/in/robert-hadden-jr-b2b987163 |
+| FDE Portfolio | https://respectfulnrespected59-source.github.io/fde-portfolio/ |
+| Quantus Portfolio | https://respectfulnrespected59-source.github.io/quantus-portfolio/ |
 | Work authorization | US citizen (confirm on submission) |
 | Willing to relocate | *(your call — most FDE roles have SF/NYC/DC hubs)* |
 | Willing to travel 25-50% | *(FDE-standard; typically Yes)* |
