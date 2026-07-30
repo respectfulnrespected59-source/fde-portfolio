@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rob Hadden, Jr. — Forward Deployed Engineer</title>
+<meta name="description" content="Forward Deployed Engineer shipping production AI systems: payments, real-time data, agent orchestration. Audit → Evals → Deployment.">
+<style>
+  :root {
+    --bg: #0A0A0A;
+    --bg-soft: #12100E;
+    --card: #17140F;
+    --line: rgba(245, 179, 66, 0.14);
+    --line-strong: rgba(245, 179, 66, 0.28);
+    --gold: #F5B342;
+    --gold-soft: #E8A73C;
+    --gold-glow: rgba(245, 179, 66, 0.35);
+    --text: #F4EDDA;
+    --muted: #9A8F7B;
+    --muted-2: #6B6152;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image:
+      radial-gradient(ellipse 60% 40% at 20% 0%, rgba(245, 179, 66, 0.08), transparent 60%),
+      radial-gradient(ellipse 50% 30% at 90% 20%, rgba(245, 179, 66, 0.04), transparent 60%);
+    background-attachment: fixed;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+  header.top {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 15px;
+  }
+  .brand .dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); box-shadow: 0 0 12px var(--gold-glow);
+    margin-right: 10px; vertical-align: middle;
+  }
+  nav.top-nav a {
+    color: var(--muted); text-decoration: none; font-size: 14px;
+    margin-left: 28px; transition: color 0.2s;
+  }
+  nav.top-nav a:hover { color: var(--gold); }
+
+  /* Hero */
+  section.hero { padding: 96px 0 64px; }
+  .kicker {
+    font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+  }
+  h1 {
+    font-size: clamp(38px, 5.5vw, 64px);
+    line-height: 1.05;
+    margin: 20px 0 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    max-width: 880px;
+  }
+  h1 .accent { color: var(--gold); }
+  .lede {
+    font-size: 19px; color: var(--muted); max-width: 720px; margin-bottom: 40px;
+  }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-primary {
+    background: var(--gold); color: #17140F;
+    box-shadow: 0 0 0 rgba(245, 179, 66, 0);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 24px var(--gold-glow);
+    transform: translateY(-1px);
+  }
+  .btn-ghost {
+    color: var(--text); border: 1px solid var(--line-strong);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Section header */
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  .sec-label {
+    font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--muted-2); font-weight: 600; margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 700; margin: 0 0 40px;
+    letter-spacing: -0.015em;
+  }
+  h3 { font-size: 22px; margin: 0 0 12px; letter-spacing: -0.01em; }
+
+  /* Loop diagram */
+  .loop {
+    display: grid; grid-template-columns: 1fr 32px 1fr 32px 1fr; align-items: stretch;
+    gap: 0; margin-top: 40px;
+  }
+  .loop-node {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .loop-node:hover {
+    border-color: var(--gold);
+    box-shadow: 0 0 32px rgba(245, 179, 66, 0.08);
+  }
+  .loop-node .step {
+    font-size: 11px; letter-spacing: 0.2em; color: var(--gold);
+    font-weight: 600; margin-bottom: 8px;
+  }
+  .loop-node h3 { font-size: 20px; margin-bottom: 10px; }
+  .loop-node p { color: var(--muted); font-size: 14px; margin: 0; }
+  .arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-soft); font-size: 24px; opacity: 0.7;
+  }
+  @media (max-width: 780px) {
+    .loop { grid-template-columns: 1fr; }
+    .arrow { display: none; }
+    .loop-node + .loop-node { margin-top: 14px; }
+  }
+
+  /* Case studies */
+  .case {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 24px;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .case:hover {
+    border-color: var(--line-strong);
+    transform: translateY(-2px);
+  }
+  .case-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 16px; margin-bottom: 8px;
+  }
+  .case-head h3 { font-size: 26px; }
+  .status {
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+  }
+  .status .live-dot {
+    display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); margin-right: 6px; vertical-align: middle;
+    box-shadow: 0 0 8px var(--gold-glow);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--gold-glow); }
+    50% { opacity: 0.5; box-shadow: 0 0 3px var(--gold-glow); }
+  }
+  .role { color: var(--muted); font-size: 14px; margin: 0 0 20px; }
+  .case-body { color: var(--muted); font-size: 15px; }
+  .case-body strong { color: var(--text); font-weight: 600; }
+  .fde-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+    margin: 24px 0 20px; padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  @media (max-width: 720px) { .fde-grid { grid-template-columns: 1fr; } }
+  .fde-cell .label {
+    font-size: 11px; letter-spacing: 0.18em; color: var(--gold);
+    font-weight: 600; margin-bottom: 6px; text-transform: uppercase;
+  }
+  .fde-cell p { color: var(--muted); font-size: 14px; margin: 0; }
+  .stack {
+    display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px;
+  }
+  .chip {
+    display: inline-block; padding: 5px 12px; border-radius: 999px;
+    background: rgba(245, 179, 66, 0.06); border: 1px solid var(--line);
+    color: var(--muted); font-size: 12px; letter-spacing: 0.03em;
+  }
+
+  /* Stack section */
+  .stack-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+  @media (max-width: 780px) { .stack-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stack-col h4 {
+    font-size: 13px; color: var(--gold); letter-spacing: 0.14em;
+    text-transform: uppercase; margin: 0 0 14px; font-weight: 600;
+  }
+  .stack-col ul {
+    list-style: none; padding: 0; margin: 0;
+    color: var(--muted); font-size: 14px;
+  }
+  .stack-col li { padding: 4px 0; }
+
+  /* Contact */
+  section.contact { text-align: center; padding: 96px 0; }
+  section.contact h2 { margin-bottom: 24px; }
+  section.contact p { color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+  .contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+  .contact-links a {
+    color: var(--gold); text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 2px; transition: border-color 0.2s;
+  }
+  .contact-links a:hover { border-color: var(--gold); }
+
+  footer {
+    padding: 32px 0; border-top: 1px solid var(--line);
+    color: var(--muted-2); font-size: 13px; text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>ROB HADDEN, JR. — FDE</div>
+    <nav class="top-nav">
+      <a href="#loop">Approach</a>
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Forward Deployed Engineer</div>
+    <h1>I ship production AI systems<br/>that earn <span class="accent">real money</span> from day one.</h1>
+    <p class="lede">
+      Independent founder-operator running three live products across payments, real-time market data, and creative-pipeline automation. Built directly on Claude, deployed on Render + Stripe, monitored with Playwright. No middleware, no framework bloat — just the smallest thing that survives contact with real users.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#work">See the work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<section id="loop">
+  <div class="wrap">
+    <div class="sec-label">How I work</div>
+    <h2>Audit &rarr; Evals &rarr; Deployment</h2>
+    <p style="color: var(--muted); max-width: 700px; margin-top: -20px; font-size: 16px;">
+      The FDE loop I run on every product. Every case study below is a full pass through it — with paying users on the other side.
+    </p>
+    <div class="loop">
+      <div class="loop-node">
+        <div class="step">01 &middot; AUDIT</div>
+        <h3>Find the workflow worth rebuilding.</h3>
+        <p>Sit inside the actual process. Ignore the documented one. Identify the single loop where AI + real engineering beats the human on cost, speed, or trust.</p>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="loop-node">
+        <div class="step">02 &middot; EVALS</div>
+        <h3>Turn non-determinism into evidence.</h3>
+        <p>Golden datasets, schema validation, exception handling for the 1,500 ways it breaks. Measure against revenue, risk, cost — not vibes.</p>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="loop-node">
+        <div class="step">03 &middot; DEPLOYMENT</div>
+        <h3>Build on the systems that already exist.</h3>
+        <p>Live Stripe, real DBs, actual auth flows. Ship to prod, monitor with browser automation, iterate against user signal — not staging traffic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label">Case Studies</div>
+    <h2>Three products. All live in production.</h2>
+
+    <article class="case">
+      <div class="case-head">
+        <h3>Alignment 365 &mdash; Wellness Subscription Platform</h3>
+        <span class="status"><span class="live-dot"></span>Live &middot; alignment365.onrender.com</span>
+      </div>
+      <p class="role">Solo founder-engineer &middot; Full stack, auth, payments, ops</p>
+      <div class="case-body">
+        <p>Subscription wellness product with dual-path authentication (Google Sign-In + email/password), live Stripe billing on Quantus AI's merchant account, and a Playwright-based ops layer that scripts Render + Stripe admin actions so config changes never require a human clicking through dashboards under pressure.</p>
+        <div class="fde-grid">
+          <div class="fde-cell">
+            <div class="label">Audit</div>
+            <p>Existing auth silently failed for Google users; email/password had no recovery path. Real users were locked out.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Evals</div>
+            <p>Playwright regression harness that replays the full checkout + login flow against live Stripe test + live keys before every deploy.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Deployment</div>
+            <p>Rotated OAuth client ID, shipped both auth paths to prod July 2026, monitored via scripted Render env editor pattern.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">Python</span>
+          <span class="chip">Render</span>
+          <span class="chip">Stripe (live)</span>
+          <span class="chip">Google OAuth</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Claude Code</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <h3>MarketPulse &mdash; Trading Dashboard</h3>
+        <span class="status"><span class="live-dot"></span>Live on Render</span>
+      </div>
+      <p class="role">Solo &middot; Real-time data, hand-rolled SVG chart engine, precision UX</p>
+      <div class="case-body">
+        <p>Trading dashboard built on Python stdlib (no framework) with a hand-rolled SVG Live chart: snap-to-candle precision, editable marks, drawable trend lines, and a signature gold neon glow on chart selection. Every pixel is intentional — no charting library, no React, no bloat. Traders can see and act on what they're seeing.</p>
+        <div class="fde-grid">
+          <div class="fde-cell">
+            <div class="label">Audit</div>
+            <p>Off-the-shelf chart libraries drift 1–3px off the candle body — a killer for precision entry marking.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Evals</div>
+            <p>Snap-to-candle math verified against raw OHLC; visual regression on mark placement across zoom levels.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Deployment</div>
+            <p>Deployed to Render; iteration driven by real trader feedback on which drawing primitives actually get used.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">Python stdlib</span>
+          <span class="chip">SVG</span>
+          <span class="chip">Vanilla JS</span>
+          <span class="chip">Render</span>
+          <span class="chip">Real-time data</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="case-head">
+        <h3>Quantus AI + QMM Production Stack</h3>
+        <span class="status"><span class="live-dot"></span>Live &middot; Gumroad + full media pipeline</span>
+      </div>
+      <p class="role">Co-founder &middot; Agent orchestration, creative pipeline, IP infrastructure</p>
+      <div class="case-body">
+        <p>Quantum Melanin Media — an Afrofuturist media studio with a live commerce channel (novella on Gumroad), a locked 35-shot trailer for the Bloodline Saga IP, and a 66-shot pilot episode in production. Quantus AI is the agent layer running payments, ops, and the creative-generation pipeline: image, motion, and voice models orchestrated through a shared repo of skills, hooks, and configs (`qmm-stack`) that stays in parity across two production rigs.</p>
+        <div class="fde-grid">
+          <div class="fde-cell">
+            <div class="label">Audit</div>
+            <p>Traditional media pipelines assume a studio team of 20. Ours is 2. The workflow that had to be rebuilt was <em>everything</em> — from shot planning to publishing.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Evals</div>
+            <p>Locked visual rules (heroes = warm gold; enemies = cold void-green; melanated skin non-negotiable) enforced as review gates on every generated asset.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Deployment</div>
+            <p>Gumroad live for novella; trailer locked and rendered; multi-rig source-of-truth repo keeps skills synced across workstations.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">Claude Code</span>
+          <span class="chip">Higgsfield</span>
+          <span class="chip">Fal.ai</span>
+          <span class="chip">Gumroad</span>
+          <span class="chip">Multi-rig git parity</span>
+          <span class="chip">Agent orchestration</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-label">Stack</div>
+    <h2>What I reach for.</h2>
+    <div class="stack-grid">
+      <div class="stack-col">
+        <h4>AI &amp; Agents</h4>
+        <ul>
+          <li>Claude (Opus / Sonnet)</li>
+          <li>Claude Code + Agent SDK</li>
+          <li>MCP servers</li>
+          <li>Tool use / structured output</li>
+          <li>Prompt caching</li>
+          <li>Eval harnesses</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h4>Backend</h4>
+        <ul>
+          <li>Python (stdlib &amp; framework)</li>
+          <li>Node.js / TypeScript</li>
+          <li>Postgres / SQLite</li>
+          <li>REST + streaming</li>
+          <li>Auth: OAuth, sessions</li>
+          <li>Stripe (live keys, webhooks)</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h4>Frontend</h4>
+        <ul>
+          <li>Vanilla JS + SVG</li>
+          <li>React / Next.js</li>
+          <li>Hand-rolled HTML/CSS</li>
+          <li>Real-time UI</li>
+          <li>Playwright automation</li>
+        </ul>
+      </div>
+      <div class="stack-col">
+        <h4>Ops</h4>
+        <ul>
+          <li>Render (prod deploys)</li>
+          <li>GitHub Actions</li>
+          <li>Playwright ops scripts</li>
+          <li>Multi-rig parity (git-first)</li>
+          <li>Env / secret rotation</li>
+          <li>Live incident ops</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-label">Get in touch</div>
+    <h2>Bring me the workflow you can't afford to keep doing by hand.</h2>
+    <p>Open to Forward Deployed Engineer roles at frontier labs and enterprise AI teams. Remote or on-site. Also open to project-based engagements.</p>
+    <div class="contact-links">
+      <a href="mailto:respectfulnrespected59@gmail.com">respectfulnrespected59@gmail.com</a>
+      <a href="https://github.com/respectfulnrespected59-source" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://alignment365.onrender.com" target="_blank" rel="noopener">Alignment 365 (live)</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; 2026 Rob &middot; Built by hand. No frameworks harmed.
+  </div>
+</footer>
+
+</body>
+</html>
