@@ -288,7 +288,41 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-label">Case Studies</div>
-    <h2>Three products. All live in production.</h2>
+    <h2>Four products. All live in production.</h2>
+
+    <article class="case">
+      <div class="case-head">
+        <h3>quantummelaninmedia.com &mdash; Studio Site + In-Browser Game Host</h3>
+        <span class="status"><span class="live-dot"></span>Live &middot; quantummelaninmedia.com</span>
+      </div>
+      <p class="role">Sole engineer &middot; Design, front end, asset pipeline, deploy gate</p>
+      <div class="case-body">
+        <p>One hand-written page, <strong>74 KB</strong>, zero frameworks and zero third-party scripts, answering in about half a second. It hosts two complete WebGL games playable in the browser on the domain itself &mdash; a Three.js racer and a chess engine, no download and no signup &mdash; and opens the interior art of four graphic novels in a keyboard-navigable lightbox. It replaced a 540px column of emoji link cards where every card was an invitation to leave the site.</p>
+        <div class="fde-grid">
+          <div class="fde-cell">
+            <div class="label">Audit</div>
+            <p>Nothing was shown, only named. Three product links pointed at the wrong books, one title was never listed, and GitHub Pages offers no staging &mdash; a push to main is production, immediately.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Evals</div>
+            <p>A pre-deploy harness screenshots desktop and phone, then fails the build on 404s, JS errors, broken images, horizontal overflow, and any video whose clock does not advance when you press play.</p>
+          </div>
+          <div class="fde-cell">
+            <div class="label">Deployment</div>
+            <p>The hero shipped a VP9 webm that returned 200, reported the right duration, and decoded clean under ffmpeg &mdash; and froze on its poster in every Chrome install. Every check agreed and all of them were wrong. Changed the format, not the encoder settings, and made the play check permanent.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="chip">HTML/CSS/JS</span>
+          <span class="chip">Three.js / WebGL</span>
+          <span class="chip">Playwright</span>
+          <span class="chip">Node</span>
+          <span class="chip">ffmpeg</span>
+          <span class="chip">PyMuPDF</span>
+          <span class="chip">GitHub Pages</span>
+        </div>
+      </div>
+    </article>
 
     <article class="case">
       <div class="case-head">
@@ -451,6 +485,8 @@
       <a href="mailto:respectfulnrespected59@gmail.com">respectfulnrespected59@gmail.com</a>
       <a href="https://github.com/respectfulnrespected59-source" target="_blank" rel="noopener">GitHub</a>
       <a href="https://linkedin.com/in/robert-hadden-jr-b2b987163" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Robert_Hadden_Jr_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+      <a href="https://quantummelaninmedia.com" target="_blank" rel="noopener">quantummelaninmedia.com (live)</a>
       <a href="https://alignment365.onrender.com" target="_blank" rel="noopener">Alignment 365 (live)</a>
     </div>
   </div>

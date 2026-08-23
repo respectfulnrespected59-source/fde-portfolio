@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Robert Hadden Jr. — Résumé 2026</title>
+<style>
+  /* Print-first. Chrome's --print-to-pdf is the only renderer this targets. */
+  @page { size: letter; margin: 0; }
+
+  :root {
+    --ink:      #24262b;
+    --ink-soft: #4a4d55;
+    --gold:     #b8860b;
+    --gold-lt:  #c9982f;
+    --band:     #14161c;
+    --paper:    #fbfaf6;
+    --rule:     #1e2027;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 8.7pt;
+    line-height: 1.44;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---- header band ---------------------------------------------------- */
+
+  .band {
+    background: var(--band);
+    color: #fff;
+    padding: 26pt 42pt 18pt;
+    border-bottom: 3pt solid var(--gold);
+  }
+  .band h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27pt;
+    font-weight: 700;
+    letter-spacing: -0.3pt;
+    margin: 0 0 5pt;
+  }
+  .tagline {
+    color: var(--gold-lt);
+    font-size: 8pt;
+    font-weight: 600;
+    letter-spacing: 2.1pt;
+    text-transform: uppercase;
+    margin: 0 0 11pt;
+  }
+  .meta  { font-size: 7.8pt; color: #e6e6e6; margin: 0 0 3pt; }
+  .meta strong { color: #fff; }
+  .links { font-size: 7.4pt; }
+  .links a { color: var(--gold-lt); text-decoration: none; }
+  .sep { color: #6a6d76; padding: 0 5pt; }
+
+  /* ---- page body ------------------------------------------------------ */
+
+  main { padding: 20pt 42pt 0; }
+
+  h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin: 15pt 0 0;
+    padding: 0 0 4pt;
+    border-bottom: 1.6pt solid var(--rule);
+    break-after: avoid;
+  }
+  h2::before {
+    content: "";
+    display: inline-block;
+    width: 7.5pt; height: 7.5pt;
+    background: var(--gold);
+    transform: rotate(45deg);
+    margin-right: 8pt;
+    position: relative; top: -1pt;
+  }
+  h2 + * { margin-top: 7pt; }
+
+  p { margin: 0 0 5pt; }
+
+  .skill { margin: 0 0 4.5pt; }
+  .skill b { color: #000; }
+
+  /* ---- experience ----------------------------------------------------- */
+
+  /* The QMM block is long enough that avoid-page on the whole job strands a
+     third of page one. Keep the heading glued to its first bullet instead. */
+  .job { margin-top: 9pt; }
+  .job-head {
+    break-after: avoid;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12pt;
+  }
+  .job-head .title { font-weight: 700; color: #000; font-size: 9.2pt; }
+  .job-head .when {
+    color: var(--gold);
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 1.1pt;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .blurb { font-style: italic; color: var(--ink-soft); margin: 1.5pt 0 5pt; break-after: avoid; }
+
+  ul { margin: 0; padding: 0; list-style: none; }
+  li {
+    position: relative;
+    padding-left: 11pt;
+    margin-bottom: 3.6pt;
+  }
+  li::before {
+    content: "";
+    position: absolute;
+    left: 1pt; top: 4.2pt;
+    width: 3pt; height: 3pt;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  li b { color: #000; }
+  a { color: var(--gold); text-decoration: none; }
+
+  .lede { border-left: 2pt solid var(--gold); padding-left: 9pt; }
+
+  /* ---- footer --------------------------------------------------------- */
+
+  footer {
+    margin: 14pt 42pt 0;
+    padding-top: 7pt;
+    border-top: 0.8pt solid #d8d4c8;
+    display: flex;
+    justify-content: space-between;
+    font-size: 6.8pt;
+    letter-spacing: 1.1pt;
+    text-transform: uppercase;
+    color: #8a8779;
+  }
+  footer b { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <h1>Robert Hadden Jr.</h1>
+  <p class="tagline">AI Automation Engineer &middot; LLM Application Developer &middot; Playwright + Python</p>
+  <p class="meta"><strong>Fremont, CA</strong> &middot; Remote <span class="sep">|</span> respectfulnrespected59@gmail.com <span class="sep">|</span> (510) 730-6882</p>
+  <p class="links">
+    <a href="https://quantummelaninmedia.com">quantummelaninmedia.com</a><span class="sep">|</span><a href="https://github.com/respectfulnrespected59-source">github.com/respectfulnrespected59-source</a><span class="sep">|</span><a href="https://linkedin.com/in/robert-hadden-jr-b2b987163">linkedin.com/in/robert-hadden-jr-b2b987163</a><span class="sep">|</span><a href="https://respectfulnrespected59-source.github.io/fde-portfolio/">fde portfolio</a>
+  </p>
+</div>
+
+<main>
+
+<h2>Summary</h2>
+<p class="lede">Founder-operator who ships production LLM and browser-automation pipelines daily on the Claude Code / Anthropic Agent SDK stack. I run the <b>Audit &rarr; Evals &rarr; Deployment</b> loop as my default working mode across a revenue-generating media business, a live wellness subscription product, and a shipped studio site that hosts two WebGL games in the browser. Built and operate a four-agent &ldquo;digital company&rdquo; on Claude Code with <b>130+ custom skills</b>, MCP servers, hooks orchestration, and persistent memory. Deep Playwright + Python for OAuth, live-key Stripe, resilient retry logic, and verification gates. Portfolio-first and fully verifiable: public GitHub, live URLs, 40+ shipped digital products.</p>
+
+<h2>Core Skills</h2>
+<p class="skill"><b>LLM / Agent Engineering:</b> Claude Code SDK, Anthropic Agent SDK, multi-agent orchestration, MCP server consumption + authoring, prompt engineering, drift-aware prompting, LLM output verification, model routing (Haiku / Sonnet / Opus), 130+ custom Claude Code skills authored</p>
+<p class="skill"><b>Front-End &amp; Graphics:</b> Hand-rolled HTML/CSS/JS (zero-framework, performance-first), Three.js / WebGL, hand-authored SVG rendering, responsive and mobile-first layout, Core Web Vitals, semantic markup + JSON-LD, automated visual regression and pre-deploy QA gates</p>
+<p class="skill"><b>Automation, QA &amp; Ops:</b> Playwright (production browser automation), resilient retry/backoff, rate-aware pacing guardrails, OAuth integration, per-step verification before deploys, ffmpeg pipeline orchestration, live env / secret rotation on Render + Stripe, multi-rig git parity</p>
+<p class="skill"><b>Payments &amp; Live Infrastructure:</b> Stripe (live keys, subscriptions, webhooks), Google OAuth flows, session auth, Render deploys, GitHub Pages + Actions, live incident response</p>
+<p class="skill"><b>Languages:</b> Python, TypeScript, JavaScript, Bash, PowerShell, SQL, HTML/CSS/SVG</p>
+<p class="skill"><b>Infrastructure:</b> Render, n8n, Supabase, Ollama, ComfyUI, Qdrant, RunPod cloud GPU (RTX 4090/5090), Coolify, Ghost, self-hosted SaaS stack administration</p>
+<p class="skill"><b>Generative Media Pipelines:</b> Kling, Higgsfield, Remotion (programmatic video in React), Manim, F5-TTS / Kokoro / XTTS-v2 voice cloning, ElevenLabs, Suno</p>
+<p class="skill"><b>Security Hygiene:</b> OWASP Top 10 awareness, secrets management (.env discipline, no-commit hooks), automated security-review workflows, MCP server boundary hardening</p>
+
+<h2>Experience</h2>
+
+<div class="job">
+  <div class="job-head">
+    <span class="title">Co-Founder &amp; Lead Technical Operator &mdash; Quantum Melanin Media (QMM)</span>
+    <span class="when">Remote &middot; 2025&ndash;Present</span>
+  </div>
+  <p class="blurb">Vertically integrated media-tech studio shipping books, AI tools, generative video, browser games, and digital products. Own all technical operations: product, infrastructure, automation, and distribution.</p>
+  <ul>
+    <li>Designed and shipped <b>quantummelaninmedia.com</b> as sole engineer &mdash; a <b>74 KB</b> hand-written page with <b>zero frameworks and zero third-party scripts</b> that hosts two complete WebGL games playable in-browser (Three.js racer + chess engine, no download, no signup), served from GitHub Pages on a custom domain at <b>~0.5s TTFB</b>.</li>
+    <li>Shipped that site with its own pre-deploy QA harness (Node + Playwright): screenshots desktop and phone, then fails the build on 404s, JS errors, broken images, horizontal overflow, and any <b>&lt;video&gt; whose clock does not advance on play</b>.</li>
+    <li>Diagnosed a production video failure that passed every available check &mdash; HTTP 200, correct duration, clean ffmpeg decode, <b>canPlayType</b> reporting &ldquo;probably&rdquo; &mdash; and still froze on its poster in every Chrome install (VP9 PIPELINE_ERROR_DECODE). Changed the shipped format rather than tuning the encoder, then made the play-and-verify gate permanent.</li>
+    <li>Built the asset pipeline behind it: PowerShell regenerates every image and video from the source game repos, Amazon and Gumroad (nothing hand-made, nothing stale); a CDP-screencast recorder captures real gameplay to mp4 for the hero loop; PyMuPDF renders graphic-novel interiors into a keyboard-navigable lightbox.</li>
+    <li>Architected a four-agent &ldquo;digital company&rdquo; on Claude Code &mdash; skills, hooks (PreToolUse / PostToolUse / Stop), rules, and persistent memory layers &mdash; and authored <b>130+ production skills</b> covering video pipelines, image generation, voice cloning, social posting, and security review.</li>
+    <li>Built <b>quantus-autoposter</b> (Python + Playwright): builds, encodes, captions, and uploads multi-format video ads to YouTube and X &mdash; OAuth handling, FFmpeg/MoviePy encoding, resilient upload retry logic.</li>
+    <li>Produced a multi-part AI-animated feature from <b>100+ continuity-chained</b> generative video clips, driven by a custom editorial-timing pipeline (ffmpeg speed-ramps, holds, per-beat retiming) with proof-of-work gating before every release.</li>
+    <li>Shipped <b>MarketPulse</b> (Python): live crypto + stock signal dashboard (RSI, MACD, golden cross, multi-timeframe confluence) with a <b>Proof Mode</b> backtest verification layer and a hand-rolled SVG chart with snap-to-candle precision. Listed commercially; deployed to Render.</li>
+    <li>Shipped <b>KAREN</b> (open-source, Python): scans DOCX / PDF / Markdown manuscripts for structural typography damage &mdash; orphan fragments, false-bold sentences, buried headings, merge bugs.</li>
+    <li>Operate RunPod RTX 4090/5090 cloud GPU rigs (ComfyUI + Ollama + n8n + Qdrant) for generation and RAG at <b>~$25/month</b> variable cost; architected a full self-hosted SaaS stack (Ghost, n8n, Supabase, Coolify, Listmonk, Plausible, Penpot, AppFlowy).</li>
+    <li>Shipped <b>40+ digital SKUs</b> on Gumroad and launched a 9-SKU print-on-demand apparel line &mdash; cover art, manufacturer-spec design files, listings, and product-image uploads automated end to end with Python/PIL + Playwright.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-head">
+    <span class="title">Solo Founder-Engineer &mdash; Alignment 365</span>
+    <span class="when">Remote &middot; 2025&ndash;Present</span>
+  </div>
+  <p class="blurb">Live wellness subscription platform on Render with live-key Stripe billing. Sole engineer for auth, payments, ops, and reliability.</p>
+  <ul>
+    <li>Rebuilt the auth stack in production: dual-path Google OAuth + email/password. The original silently failed for Google users; rotated the OAuth client ID and shipped both surfaces to prod <b>July 2026 with zero regressions on paying customers</b>.</li>
+    <li>Built a <b>Playwright ops harness</b> that scripts Render env-editor and Stripe dashboard actions, so config changes and live-key rotations never require manual dashboard clicking under incident pressure.</li>
+    <li>Full live-key Stripe integration: test + live keys, webhooks, and a checkout regression suite that replays the whole flow before every deploy.</li>
+  </ul>
+</div>
+
+<h2>Selected Projects</h2>
+<ul>
+  <li><b>quantummelaninmedia.com</b> &mdash; 74 KB hand-written site, zero frameworks, two WebGL games playable on the domain, automated pre-deploy QA gate. <a href="https://quantummelaninmedia.com">quantummelaninmedia.com</a></li>
+  <li><b>MarketPulse</b> &mdash; Python + hand-rolled SVG market-signal dashboard with backtest Proof Mode. <a href="https://github.com/respectfulnrespected59-source/marketpulse">github.com/respectfulnrespected59-source/marketpulse</a></li>
+  <li><b>KAREN</b> &mdash; open-core manuscript typography scanner (DOCX / PDF / Markdown). <a href="https://github.com/respectfulnrespected59-source/karen">github.com/respectfulnrespected59-source/karen</a></li>
+  <li><b>Alignment 365</b> &mdash; live wellness subscription on Render + Stripe, Playwright ops harness, dual OAuth. <a href="https://alignment365.onrender.com">alignment365.onrender.com</a></li>
+  <li><b>QMM Stack</b> &mdash; four-agent Claude Code architecture: skills + agents + rules + persistent memory. <i>Private repo; live walkthrough on request.</i></li>
+</ul>
+
+<h2>Education</h2>
+<p><b>Skyline High School</b>, Oakland, CA &mdash; Diploma.<br>
+Fully self-directed engineering education: primary vendor documentation, source-level study of production codebases, and continuous hands-on shipped builds &mdash; verifiable across the GitHub and portfolio links above.</p>
+
+</main>
+
+<footer>
+  <span>Robert Hadden Jr. &middot; <b>AI Automation Engineer</b></span>
+  <span>References &amp; live walkthroughs on request</span>
+</footer>
+
+</body>
+</html>

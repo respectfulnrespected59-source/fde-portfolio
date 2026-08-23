@@ -3,7 +3,7 @@
 **Forward Deployed Engineer · AI Automation Engineer · Claude Code + Playwright + Python**
 
 Fremont, CA · Remote · respectfulnrespected59@gmail.com · (510) 730-6882
-[LinkedIn](https://linkedin.com/in/robert-hadden-jr-b2b987163) &middot; [GitHub](https://github.com/respectfulnrespected59-source) &middot; [FDE Portfolio](https://respectfulnrespected59-source.github.io/fde-portfolio/) &middot; [Quantus Portfolio](https://respectfulnrespected59-source.github.io/quantus-portfolio/)
+[LinkedIn](https://linkedin.com/in/robert-hadden-jr-b2b987163) &middot; [GitHub](https://github.com/respectfulnrespected59-source) &middot; [quantummelaninmedia.com](https://quantummelaninmedia.com) &middot; [FDE Portfolio](https://respectfulnrespected59-source.github.io/fde-portfolio/) &middot; [Quantus Portfolio](https://respectfulnrespected59-source.github.io/quantus-portfolio/)
 
 ---
 
@@ -29,6 +29,8 @@ Founder-operator who ships production LLM + browser-automation pipelines daily o
 
 **Payments & Live Infrastructure:** Stripe (live keys, subscriptions, webhooks), Google OAuth flows, session auth, Render deploys, GitHub Actions, live incident response
 
+**Front-End & Graphics:** Hand-rolled HTML/CSS/JS (zero-framework, performance-first), Three.js / WebGL, hand-authored SVG rendering, responsive and mobile-first layout, Core Web Vitals, semantic markup + JSON-LD, automated visual regression and pre-deploy QA gates
+
 **Languages:** Python, TypeScript, JavaScript, Bash, PowerShell, SQL, HTML/CSS/SVG
 
 **Infrastructure:** Render, n8n, Supabase, Ollama, ComfyUI, Qdrant, RunPod cloud GPU (RTX 4090/5090), Coolify, Ghost, self-hosted SaaS stack administration
@@ -45,6 +47,9 @@ Founder-operator who ships production LLM + browser-automation pipelines daily o
 **Remote &middot; 2025&ndash;Present**
 *Vertically integrated media-tech studio shipping books, AI tools, generative video, and digital products. Own all technical operations: product, infrastructure, automation, and distribution.*
 
+- Designed and shipped **[quantummelaninmedia.com](https://quantummelaninmedia.com)** as sole engineer &mdash; a **74 KB** hand-written page with **zero frameworks and zero third-party scripts** that hosts two complete WebGL games playable in-browser (Three.js racer + chess engine), served from GitHub Pages on a custom domain at **~0.5s TTFB**. Shipped with its own pre-deploy QA harness (Node + Playwright): screenshots desktop and phone, then fails the build on 404s, JS errors, broken images, horizontal overflow, and any `<video>` whose clock does not advance on play.
+- Diagnosed a production video failure that passed every available check &mdash; HTTP 200, correct duration, clean `ffmpeg` decode, `canPlayType` reporting `"probably"` &mdash; and still froze on its poster in every Chrome install (VP9 `PIPELINE_ERROR_DECODE`). Changed the shipped format rather than tuning the encoder, then added the play-and-verify gate that now blocks every deploy.
+- Built the asset pipeline behind that site: PowerShell regenerates every image and video from the source game repos, Amazon and Gumroad (nothing hand-made, nothing stale); a CDP-screencast recorder captures real gameplay to mp4 for the hero loop; PyMuPDF renders graphic-novel interiors into a keyboard-navigable lightbox.
 - Architected a four-agent "digital company" on Claude Code &mdash; skills, hooks (PreToolUse / PostToolUse / Stop), rules, and persistent memory layers &mdash; and authored **130+ production skills** covering video pipelines, image generation, voice cloning, social posting, and security review.
 - Built **quantus-autoposter** (Python + Playwright): builds, encodes, captions, and uploads multi-format video ads to YouTube and X &mdash; OAuth handling, FFmpeg/MoviePy encoding, and resilient upload retry logic.
 - Produced a multi-part AI-animated feature from **100+ continuity-chained** generative video clips, driven by a custom editorial-timing pipeline (ffmpeg speed-ramps, holds, per-beat retiming) with per-beat verification and proof-of-work gating before every release.
@@ -73,6 +78,7 @@ Founder-operator who ships production LLM + browser-automation pipelines daily o
 
 ## Selected Projects
 
+- **quantummelaninmedia.com** &mdash; 74 KB hand-written site, zero frameworks, two WebGL games playable on the domain, automated pre-deploy QA gate. Sole engineer. [quantummelaninmedia.com](https://quantummelaninmedia.com)
 - **MarketPulse** &mdash; Python + hand-rolled SVG, zero-install market-signal dashboard with backtest Proof Mode. Snap-to-candle precision, editable marks, drawable trend lines. Live on Render. [github.com/respectfulnrespected59-source/marketpulse](https://github.com/respectfulnrespected59-source/marketpulse)
 - **KAREN** &mdash; open-core manuscript typography scanner (DOCX / PDF / Markdown). [github.com/respectfulnrespected59-source/karen](https://github.com/respectfulnrespected59-source/karen)
 - **Alignment 365** &mdash; live wellness subscription on Render + Stripe. Playwright ops harness, dual OAuth. [alignment365.onrender.com](https://alignment365.onrender.com)
